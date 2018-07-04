@@ -15,6 +15,8 @@ namespace AddIn
     {
         private SerialPort _serialPort;
 
+        public int BaudRate { get; set; } = 9600;
+        public int DataBits { get; set; } = 8;
         public int Port { get; set; }
         public string Error { get; private set; }
         public bool Connected { get; private set; }
@@ -30,10 +32,10 @@ namespace AddIn
             {
                 _serialPort = new SerialPort("COM" + Port)
                 {
-                    BaudRate = 9600,
+                    BaudRate = BaudRate,
                     Parity = Parity.None,
                     StopBits = StopBits.One,
-                    DataBits = 8,
+                    DataBits = DataBits,
                     Handshake = Handshake.None
                 };
 

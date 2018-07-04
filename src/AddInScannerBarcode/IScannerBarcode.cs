@@ -8,6 +8,8 @@ namespace AddIn
         bool Connected { get; }
         string Error { get; }
         int Port { get; set; }
+        int BaudRate { get; set; }
+        int DataBits { get; set; }
 
         bool Connect();
         void Disconnect();
